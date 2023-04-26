@@ -6,3 +6,16 @@ h1 {
   color: pink;
 }
 
+.carre {
+  height: 5rem;
+  width: 5rem;
+  border: 1px solid black;
+}
+
+.jour {
+  background-color: gold;
+}
+
+.nuit {
+  background-color: darkslategray;
+}
