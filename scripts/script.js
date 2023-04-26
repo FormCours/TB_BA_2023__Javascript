@@ -72,3 +72,60 @@ btnJourNuit2.addEventListener('click', function() {
   zoneJourNuit.classList.toggle('nuit');
 })
 
+
+
+/**************************************************************/
+
+// LocalStorage => Permet de sauvegarde des données 
+//                 Sous forme de chaine de caractere !!!
+
+// - Pour les valeurs primitive (string, number, boolean, ...)
+//   On peut les stocker directement, mais attention a la conversion
+const firstname = 'Della';
+const nb = 42;
+
+//   • Save
+localStorage.setItem('first_name', firstname);
+localStorage.setItem('number', nb);
+
+//   • Recuperer
+const firstnameRecup = localStorage.getItem('first_name');
+const nbRecup = parseFloat(localStorage.getItem('number'));
+
+
+// - Pour les valeurs complexe (object, tableau, dico, ...)
+//   Il faut passé par un format pour eviter de perdre les données !!!
+//   Le plus simple => JSON
+
+// Tips pour le JSON : 
+//  - Valeur vers le JSON =>  const json = JSON.stringify(valeur);
+//  - JSON vers la valeur =>  const copy = JSON.parse(json);
+
+const house = {
+  nbRoom : 42,
+  color: 'Pinky'
+};
+
+const tab = ['Riri', 'Zaza', 'Della']
+
+const people = [
+  {
+    firstname: 'Della',
+    lastname: 'Duck'
+  },
+  {
+    firstname: 'Zaza',
+    lastname: 'Vanderquack'
+  }
+]
+
+
+//   • Save
+localStorage.setItem('house', JSON.stringify(house));
+localStorage.setItem('tab', JSON.stringify(tab));
+localStorage.setItem('people', JSON.stringify(people));
+
+//   • Recuperer
+const houseRecup = JSON.parse(localStorage.getItem('house'));
+const tabRecup = JSON.parse(localStorage.getItem('tab'));
+const peopleRecup = JSON.parse(localStorage.getItem('people'));
